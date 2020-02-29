@@ -166,7 +166,7 @@ module ModelSpec
         t.timestamps
       end
 
-      create_table("model_with_uuid", id: :uuid) do |t|
+      create_table("model_with_uuid", id: :uuid) do |_|
       end
     end
   end
