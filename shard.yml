@@ -19,7 +19,7 @@ dependencies:
     branch: master
   pg:
     github: will/crystal-pg
-    branch: master
+    version: ~> 0.21.0
   inflector:
     github: phoffer/inflector.cr
     version: "~> 0.1.8"
