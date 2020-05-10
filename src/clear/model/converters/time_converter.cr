@@ -12,9 +12,8 @@ class Clear::Model::Converter::TimeConverter
       if time.ends_with?(">>")
         time = time.gsub(">>", "")
       end
-      case time
-      when /[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}:[0-9]{2}.[0-9]+/ # 2020-02-22 09:11:42.476953
-        Time.parse_local(x.to_s, "%F %X.%L")
+      if !time.ends_with?("Z") && !time.includes?("+")
+        Time::Format::RFC_3339.parse("#{time}Z")
       else
         Time::Format::RFC_3339.parse(time)
       end
